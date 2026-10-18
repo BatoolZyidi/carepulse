@@ -16,4 +16,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "python manage.py migrate && daphne -b 0.0.0.0 -p ${PORT:-8000} carepulse.asgi:application"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py seed_admin && python manage.py seed_dummy_data && daphne -b 0.0.0.0 -p ${PORT:-8000} carepulse.asgi:application"]
