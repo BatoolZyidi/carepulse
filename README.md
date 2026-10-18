@@ -188,3 +188,10 @@ carepulse/
 - **Ali Raza:** `ali.patient`
 
 > All patients and doctors are seeded with the filler phone number `+923000000000` for testing purposes.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
