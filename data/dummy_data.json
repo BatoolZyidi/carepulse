@@ -1,0 +1,80 @@
+{
+  "doctors": [
+    {
+      "username": "dr.ahmed",
+      "email": "ahmed.khan@carepulse.health",
+      "password": "Doctor@123",
+      "full_name": "Dr. Ahmed Khan",
+      "specialty": "Urology",
+      "license_number": "MED-URO-2021-001",
+      "phone_number": "+923000000000"
+    },
+    {
+      "username": "dr.sara",
+      "email": "sara.malik@carepulse.health",
+      "password": "Doctor@123",
+      "full_name": "Dr. Sara Malik",
+      "specialty": "Cardiology",
+      "license_number": "MED-CARD-2019-042",
+      "phone_number": "+923000000000"
+    }
+  ],
+  "patients": [
+    {
+      "username": "pakeeza",
+      "email": "pakeeza@carepulse.health",
+      "password": "Patient@123",
+      "full_name": "Pakeeza",
+      "date_of_birth": "1990-05-15",
+      "phone_number": "+923000000000",
+      "emergency_contact_name": "Pakeeza Family",
+      "emergency_contact_phone": "+923000000000",
+      "care_type": "post_op",
+      "primary_diagnosis": "Kidney Stone — Post-Op Recovery (Ureteroscopy)",
+      "discharge_date": "2026-09-10",
+      "assigned_doctor": "dr.ahmed"
+    },
+    {
+      "username": "batool",
+      "email": "batool@carepulse.health",
+      "password": "Patient@123",
+      "full_name": "Batool",
+      "date_of_birth": "1985-11-22",
+      "phone_number": "+923000000000",
+      "emergency_contact_name": "Batool Family",
+      "emergency_contact_phone": "+923000000000",
+      "care_type": "chronic",
+      "primary_diagnosis": "Chronic Heart Disease — Ischemic Cardiomyopathy",
+      "discharge_date": null,
+      "assigned_doctor": "dr.sara"
+    },
+    {
+      "username": "zainab.patient",
+      "email": "zainab@carepulse.health",
+      "password": "Patient@123",
+      "full_name": "Zainab Hussain",
+      "date_of_birth": "1978-03-08",
+      "phone_number": "+923000000000",
+      "emergency_contact_name": "Hassan Hussain",
+      "emergency_contact_phone": "+923000000000",
+      "care_type": "post_op",
+      "primary_diagnosis": "Appendectomy — Post-Op Recovery",
+      "discharge_date": "2026-09-12",
+      "assigned_doctor": "dr.ahmed"
+    },
+    {
+      "username": "ali.patient",
+      "email": "ali.raza@carepulse.health",
+      "password": "Patient@123",
+      "full_name": "Ali Raza",
+      "date_of_birth": "1965-07-30",
+      "phone_number": "+923000000000",
+      "emergency_contact_name": "Fatima Raza",
+      "emergency_contact_phone": "+923000000000",
+      "care_type": "chronic",
+      "primary_diagnosis": "Type 2 Diabetes with Hypertension",
+      "discharge_date": null,
+      "assigned_doctor": "dr.sara"
+    }
+  ]
+}

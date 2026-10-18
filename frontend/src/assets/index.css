@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 90%; /* ~14.4px base — scales all rem units uniformly for a denser layout */
+  }
+  body {
+    @apply bg-pulse-black text-pulse-white font-sans antialiased;
+    background-image: radial-gradient(circle at 20% 20%, rgba(57, 255, 158, 0.10), transparent 40%),
+      radial-gradient(circle at 85% 5%, rgba(18, 179, 88, 0.08), transparent 35%),
+      radial-gradient(circle at 50% 100%, rgba(18, 179, 88, 0.06), transparent 45%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  ::selection {
+    @apply bg-pulse-green-500/30 text-pulse-white;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pulse-green-900/60 rounded-full;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-pulse-slate/60 backdrop-blur-md border border-pulse-line rounded-2xl shadow-glass;
+  }
+  .glass-panel {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-pulse-green-500 px-5 py-2.5
+      font-semibold text-pulse-black transition-all duration-200
+      hover:bg-pulse-green-400 hover:shadow-glow active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-pulse-line bg-white/5 px-5 py-2.5
+      font-semibold text-pulse-white transition-all duration-200
+      hover:bg-white/10 hover:border-pulse-green-700 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-pulse-line bg-white/5 px-4 py-2.5 text-sm text-pulse-white
+      placeholder:text-white/30 outline-none transition-all duration-200
+      focus:border-pulse-green-500 focus:bg-white/[0.07] focus:ring-2 focus:ring-pulse-green-500/20;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-pulse-green-400;
+  }
+}

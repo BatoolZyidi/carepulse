@@ -1,0 +1,67 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: carepulse-backend
+    command: daphne -b 0.0.0.0 -p 8080 carepulse.asgi:application
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  celery-worker:
+    build:
+      context: ./backend
+    container_name: carepulse-celery-worker
+    command: celery -A carepulse worker -l info
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - backend
+    restart: unless-stopped
+
+  celery-beat:
+    build:
+      context: ./backend
+    container_name: carepulse-celery-beat
+    command: celery -A carepulse beat -l info
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - backend
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: carepulse-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: carepulse-frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5374:5173"
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    restart: unless-stopped
